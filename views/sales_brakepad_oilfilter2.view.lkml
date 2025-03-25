@@ -1,5 +1,5 @@
-view: sales_brakepad_oilfilter_sentiment {
-  sql_table_name: `pandera-bi-demo.ccai.sales_brakepad_oilfilter_sentiment` ;;
+view: sales_brakepad_oilfilter2 {
+  sql_table_name: `pandera-bi-demo.ccai.sales_brakepad_oilfilter2` ;;
 
   dimension: category {
     type: string
@@ -71,7 +71,6 @@ view: sales_brakepad_oilfilter_sentiment {
   }
   dimension_group: weekend {
     type: time
-    description: "%E4Y-%m-%d"
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date

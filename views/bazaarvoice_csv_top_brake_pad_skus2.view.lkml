@@ -1,5 +1,5 @@
-view: bazaarvoice_csv_top_oil_filter_sku {
-  sql_table_name: `pandera-bi-demo.ccai.Bazaarvoice_CSV_Top_Oil_Filter_SKU` ;;
+view: bazaarvoice_csv_top_brake_pad_skus2 {
+  sql_table_name: `pandera-bi-demo.ccai.Bazaarvoice_CSV_Top_Brake_Pad_SKUs2` ;;
 
   dimension: __helpful_votes {
     type: number
@@ -35,7 +35,6 @@ view: bazaarvoice_csv_top_oil_filter_sku {
   }
   dimension_group: review_submission {
     type: time
-    description: "bq-datetime"
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.Review_Submission_Date ;;
   }
