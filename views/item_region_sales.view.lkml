@@ -97,8 +97,11 @@ view: item_region_sales {
     sql: ${bazaarvoice_csv_top_brake_pad_skus2.__not_helpful_votes} ;;
   }
   measure: product_recommendation_rate {
-    type: percent_of_total
-    sql: ${bazaarvoice_csv_top_brake_pad_skus2.recommend_to_a_friend__y_n_} ;;
-    filters: [bazaarvoice_csv_top_brake_pad_skus2.recommend_to_a_friend__y_n_: "Yes"]
+    type: average
+    sql: CASE
+         WHEN ${bazaarvoice_csv_top_brake_pad_skus2.recommend_to_a_friend__y_n_} THEN 1
+         ELSE 0
+       END ;;
   }
+
 }
