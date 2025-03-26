@@ -10,18 +10,18 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 explore: item_region_sales {
   join: bazaarvoice_csv_top_brake_pad_skus2 {
     type: left_outer
-    relationship: many_to_one
+    relationship: many_to_many
     sql_on: ${item_region_sales.item} = ${bazaarvoice_csv_top_brake_pad_skus2.product_id} ;;
   }
   join: bazaarvoice_csv_top_oil_filter_sku_sentiment {
     type: left_outer
-    relationship: many_to_one
+    relationship: many_to_many
     sql_on: ${item_region_sales.item} = ${bazaarvoice_csv_top_oil_filter_sku_sentiment.product_id} ;;
 
   }
   join: sales_brakepad_oilfilter2 {
     type: left_outer
-    relationship: many_to_one
+    relationship: many_to_many
     sql_on: ${item_region_sales.item} = ${sales_brakepad_oilfilter2.product_id} and ${item_region_sales.minor} = ${sales_brakepad_oilfilter2.minor};;
   }
 
