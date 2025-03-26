@@ -56,7 +56,15 @@ view: item_region_sales {
     type: number
     sql: ${TABLE}.week_id ;;
   }
+  measure: profit {
+    type: sum
+    sql: ${rtl}-${cost} ;;
+  }
   measure: count {
     type: count
+  }
+  measure: total_quantity {
+    type: sum
+    sql: ${qty} ;;
   }
 }

@@ -2,6 +2,7 @@ view: sales_brakepad_oilfilter2 {
   sql_table_name: `pandera-bi-demo.ccai.sales_brakepad_oilfilter2` ;;
 
   dimension: category {
+    hidden: yes
     type: string
     sql: ${TABLE}.category ;;
   }
@@ -22,6 +23,7 @@ view: sales_brakepad_oilfilter2 {
     sql: ${TABLE}.Product_ID ;;
   }
   dimension: profit {
+    hidden: yes
     type: number
     sql: ${TABLE}.profit ;;
   }
@@ -34,10 +36,12 @@ view: sales_brakepad_oilfilter2 {
     sql: ${TABLE}.region ;;
   }
   dimension: review_text {
+    hidden: yes
     type: string
     sql: ${TABLE}.review_text ;;
   }
   dimension: review_text2 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Review_Text2 ;;
   }
@@ -58,6 +62,7 @@ view: sales_brakepad_oilfilter2 {
     sql: ${TABLE}.sentiment_score ;;
   }
   dimension: sub_category {
+    hidden: yes
     type: string
     sql: ${TABLE}.sub_category ;;
   }
@@ -82,5 +87,13 @@ view: sales_brakepad_oilfilter2 {
   }
   measure: count {
     type: count
+  }
+  measure: average_sentiment_score {
+    type: average
+    sql: ${sentiment_score} ;;
+  }
+  measure: average_sentiment_magnitude {
+    type: average
+    sql: ${sentiment_magnitude} ;;
   }
 }
