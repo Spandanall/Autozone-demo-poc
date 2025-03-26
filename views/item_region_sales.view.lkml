@@ -108,14 +108,15 @@ view: item_region_sales {
     sql: "" ;;
     html:
     <div style="border:solid 0px #000000; border-radius: 4px; padding: 10px 12px;
-               background: #00A1F1; text-align: left; font-family:Google Sans; height: 100%">
-    <nav style="font-size: 14px; letter-spacing: 1px;">
-<a style="padding: 16px; line-height: 40px; color:#FFFFFF;" href="/dashboards/689 ">Overall Performance</a>
-<a style="padding: 16px; line-height: 40px; color:#FFFFFF;" >|</a>
-<a style="padding: 16px; line-height: 40px; color:#FFFFFF;" href="/dashboards/691 ">Category Specific Insights</a>
-      </nav>
-      </div>
-      ;;
+               background: #00A1F1; text-align: center; font-family: Google Sans; height: 100%">
+        <nav style="display: flex; justify-content: space-evenly; align-items: center; font-size: 14px; letter-spacing: 1px;">
+            <a style="flex: 1; text-align: center; padding: 16px; line-height: 40px; color:#FFFFFF;" href="/dashboards/689">Overall Performance</a>
+            <a style="color: #FFFFFF;">|</a>
+            <a style="flex: 1; text-align: center; padding: 16px; line-height: 40px; color:#FFFFFF;" href="/dashboards/691">Category Specific Insights</a>
+        </nav>
+    </div>
+    ;;
   }
+
 
 }
