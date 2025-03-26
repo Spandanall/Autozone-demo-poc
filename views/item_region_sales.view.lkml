@@ -103,5 +103,19 @@ view: item_region_sales {
          ELSE 0
        END ;;
   }
+  dimension: site_nav {
+    type: string
+    sql: "" ;;
+    html:
+    <div style="border:solid 0px #000000; border-radius: 4px; padding: 10px 12px;
+               background: #00A1F1; text-align: left; font-family:Google Sans; height: 100%">
+    <nav style="font-size: 14px; letter-spacing: 1px;">
+<a style="padding: 16px; line-height: 40px; color:#FFFFFF;" href="/dashboards/689 ">Overall Performance</a>
+<a style="padding: 16px; line-height: 40px; color:#FFFFFF;" >|</a>
+<a style="padding: 16px; line-height: 40px; color:#FFFFFF;" href="/dashboards/691 ">Category Specific Insights</a>
+      </nav>
+      </div>
+      ;;
+  }
 
 }
