@@ -22,7 +22,7 @@ explore: item_region_sales {
   join: sales_brakepad_oilfilter2 {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${item_region_sales.item} = ${sales_brakepad_oilfilter2.product_id} ;;
+    sql_on: ${item_region_sales.item} = ${sales_brakepad_oilfilter2.product_id} and ${item_region_sales.minor} = ${sales_brakepad_oilfilter2.minor};;
   }
 
 
