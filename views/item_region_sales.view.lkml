@@ -66,5 +66,14 @@ view: item_region_sales {
   measure: total_quantity {
     type: sum
     sql: ${qty} ;;
+
+  }
+  measure: average_sentiment_score {
+    type: average
+    sql: ${TABLE}.sentiment_score ;;
+  }
+  measure: average_sentiment_magnitude {
+    type: average
+    sql: ${TABLE}Sentiment_magnitude ;;
   }
 }

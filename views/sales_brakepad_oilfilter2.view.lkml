@@ -88,12 +88,4 @@ view: sales_brakepad_oilfilter2 {
   measure: count {
     type: count
   }
-  measure: average_sentiment_score {
-    type: average
-    sql: ${sentiment_score} ;;
-  }
-  measure: average_sentiment_magnitude {
-    type: average
-    sql: ${sentiment_magnitude} ;;
-  }
 }
