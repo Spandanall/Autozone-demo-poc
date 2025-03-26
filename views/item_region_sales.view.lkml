@@ -74,6 +74,6 @@ view: item_region_sales {
   }
   measure: average_sentiment_magnitude {
     type: average
-    sql: ${TABLE}Sentiment_magnitude ;;
+    sql: ${TABLE}.Sentiment_magnitude ;;
   }
 }
