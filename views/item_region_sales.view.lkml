@@ -70,10 +70,10 @@ view: item_region_sales {
   }
   measure: average_sentiment_score {
     type: average
-    sql: ${TABLE}.sentiment_score ;;
+    sql: ${sales_brakepad_oilfilter2.sentiment_score} ;;
   }
   measure: average_sentiment_magnitude {
     type: average
-    sql: ${TABLE}.sentiment_magnitude ;;
+    sql: ${sales_brakepad_oilfilter2.sentiment_magnitude} ;;
   }
 }
