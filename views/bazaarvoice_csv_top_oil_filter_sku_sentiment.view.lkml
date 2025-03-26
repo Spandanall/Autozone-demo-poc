@@ -18,6 +18,7 @@ view: bazaarvoice_csv_top_oil_filter_sku_sentiment {
     sql: ${TABLE}.Overall_Rating ;;
   }
   dimension: product_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.Product_ID ;;
   }

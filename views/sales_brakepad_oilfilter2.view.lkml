@@ -11,6 +11,7 @@ view: sales_brakepad_oilfilter2 {
     sql: ${TABLE}.cost ;;
   }
   dimension: item {
+    primary_key: yes
     type: number
     sql: ${TABLE}.item ;;
   }
