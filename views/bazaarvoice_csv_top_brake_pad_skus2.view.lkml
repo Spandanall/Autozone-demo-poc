@@ -18,7 +18,6 @@ view: bazaarvoice_csv_top_brake_pad_skus2 {
     sql: ${TABLE}.Overall_Rating ;;
   }
   dimension: product_id {
-    primary_key: yes
     type: number
     sql: ${TABLE}.Product_ID ;;
   }
