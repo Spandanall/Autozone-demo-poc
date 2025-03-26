@@ -76,4 +76,29 @@ view: item_region_sales {
     type: average
     sql: ${sales_brakepad_oilfilter2.sentiment_magnitude} ;;
   }
+  measure: total_reviews {
+    type: count_distinct
+    sql: ${bazaarvoice_csv_top_brake_pad_skus2.review_id} ;;
+  }
+  measure: average_helpfulness_score {
+    type: average
+    sql: ${bazaarvoice_csv_top_brake_pad_skus2.helpfulness_score} ;;
+  }
+  measure: average_rating {
+    type: average
+    sql: ${bazaarvoice_csv_top_brake_pad_skus2.overall_rating} ;;
+  }
+  measure: total_helpful_votes {
+    type: sum
+    sql: ${bazaarvoice_csv_top_brake_pad_skus2.__helpful_votes} ;;
+  }
+  measure: total_not_helpful_votes {
+    type: sum
+    sql: ${bazaarvoice_csv_top_brake_pad_skus2.__not_helpful_votes} ;;
+  }
+  measure: product_recommendation_rate {
+    type: percent_of_total
+    sql: ${bazaarvoice_csv_top_brake_pad_skus2.recommend_to_a_friend__y_n_} ;;
+    filters: [bazaarvoice_csv_top_brake_pad_skus2.recommend_to_a_friend__y_n_: "Yes"]
+  }
 }

@@ -57,29 +57,4 @@ view: bazaarvoice_csv_top_brake_pad_skus2 {
   measure: count {
     type: count
   }
-  measure: total_reviews {
-    type: count
-    sql: ${review_id} ;;
-  }
-  measure: average_helpfulness_score {
-    type: average
-    sql: ${TABLE}.Helpfulness_Score ;;
-  }
-  measure: average_rating {
-    type: average
-    sql: ${TABLE}.Overall_Rating ;;
-  }
-  measure: total_helpful_votes {
-    type: sum
-    sql: ${__helpful_votes} ;;
-  }
-  measure: total_not_helpful_votes {
-    type: sum
-    sql: ${__not_helpful_votes} ;;
-  }
-  measure: product_recommendation_rate {
-    type: percent_of_total
-    sql: ${recommend_to_a_friend__y_n_} ;;
-    filters: [recommend_to_a_friend__y_n_: "Yes"]
-  }
 }
