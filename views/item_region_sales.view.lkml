@@ -10,11 +10,11 @@ view: item_region_sales {
     sql: ${TABLE}.cost ;;
   }
   dimension: int64_field_0 {
+    primary_key: yes
     type: number
     sql: ${TABLE}.int64_field_0 ;;
   }
   dimension: item {
-    primary_key: yes
     type: number
     sql: ${TABLE}.item ;;
   }
