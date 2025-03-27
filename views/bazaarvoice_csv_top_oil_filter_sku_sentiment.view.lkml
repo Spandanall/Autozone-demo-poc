@@ -30,7 +30,6 @@ view: bazaarvoice_csv_top_oil_filter_sku_sentiment {
     sql: ${TABLE}.Recommend_to_a_Friend__Y_N_ ;;
   }
   dimension: review_id {
-    primary_key: yes
     type: number
     sql: ${TABLE}.Review_ID ;;
   }
