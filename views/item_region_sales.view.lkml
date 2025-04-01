@@ -78,6 +78,16 @@ view: item_region_sales {
 
 ####################### Measures Starts
 
+  measure: cost_price {
+    type: sum
+    sql: ${cost} ;;
+  }
+
+  measure: sale_price {
+    type: sum
+    sql: ${rtl} ;;
+  }
+
   measure: total_quantity {
     label: "Total Quantity Sold"
     type: sum
@@ -89,7 +99,7 @@ view: item_region_sales {
   measure: total_revenue  {
     label: "Total Revenue"
     type: number
-    sql: ${rtl}*${qty} ;;
+    sql: ${sale_price}*${total_quantity} ;;
     value_format_name: usd_0
     description: "Measures overall sales performance"
   }
@@ -97,7 +107,7 @@ view: item_region_sales {
   measure: total_cost  {
     label: "Total Cost"
     type: number
-    sql: ${cost}*${qty} ;;
+    sql: ${cost_price}*${total_quantity} ;;
     value_format_name: usd_0
     description: "Tracks total expenditure on items sold"
   }
@@ -120,8 +130,8 @@ view: item_region_sales {
 
   measure: total_net_profit {
     label: "Total Net Profit"
-    type: sum
-    sql: ${rtl}-${cost} ;;
+    type: number
+    sql: ${sale_price}-${cost_price} ;;
     value_format_name: usd_0
   }
 
