@@ -1,5 +1,5 @@
-view: bazaarvoice_csv_top_oil_filter_sku_sentiment {
-  sql_table_name: `pandera-bi-demo.ccai.Bazaarvoice_CSV_Top_Oil_Filter_SKU_Sentiment` ;;
+view: test_new_attr {
+  sql_table_name: `pandera-bi-demo.ccai.test_new_attr` ;;
 
   dimension: __helpful_votes {
     type: number
@@ -18,6 +18,7 @@ view: bazaarvoice_csv_top_oil_filter_sku_sentiment {
     sql: ${TABLE}.Overall_Rating ;;
   }
   dimension: product_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.Product_ID ;;
   }
@@ -29,30 +30,27 @@ view: bazaarvoice_csv_top_oil_filter_sku_sentiment {
     type: yesno
     sql: ${TABLE}.Recommend_to_a_Friend__Y_N_ ;;
   }
-  dimension: review_id {
-    type: number
-    sql: ${TABLE}.Review_ID ;;
-  }
-  dimension_group: review_submission {
-    type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
-    sql: ${TABLE}.Review_Submission_Date ;;
-  }
   dimension: review_text {
     type: string
     sql: ${TABLE}.Review_Text ;;
   }
-  dimension: review_title {
-    type: string
-    sql: ${TABLE}.Review_Title ;;
-  }
-  dimension: vehicle__free_text_fields_ {
-    type: string
-    sql: ${TABLE}.Vehicle__Free_text_Fields_ ;;
-  }
-  dimension: verified_purchaser {
+  dimension: rating_flag {
     type: yesno
-    sql: ${TABLE}.VerifiedPurchaser ;;
+    sql: ${overall_rating}>=4 ;;
+  }
+  dimension: length_review_text {
+    type: yesno
+    sql: length(${review_text}) between 17 and 30  ;;
+  }
+  measure: avg_rating {
+    type: average
+    sql: round(${overall_rating},0) ;;
+    value_format_name: decimal_0
+  }
+  measure: avg_helpfulness_score {
+    type: average
+    sql: ${helpfulness_score}*10 ;;
+    value_format_name: percent_0
   }
   measure: count {
     type: count
