@@ -32,7 +32,7 @@ view: test_new_attr {
   }
   dimension: review_text {
     type: string
-    sql: ${TABLE}.Review_Text ;;
+    sql: LOWER(REGEXP_REPLACE(REPLACE(${TABLE}.Review_Text, '"', ''), r'[^a-zA-Z0-9 ]', '')) ;;
   }
   dimension: rating_flag {
     type: yesno
