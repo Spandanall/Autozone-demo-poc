@@ -28,7 +28,7 @@ view: sentiment_score {
   }
   dimension: sentiment_magnitude {
     type: number
-    sql: CAST(sentiment_score AS FLOAT)round(${TABLE}.sentiment_magnitude,2) ;;
+    sql: ROUND(${TABLE}.sentiment_magnitude, 2) ;;
   }
   dimension: sentiment_score {
     type: number
