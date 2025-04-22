@@ -15,7 +15,8 @@ explore: item_region_sales {
     relationship: many_to_one
   }
   join: sentiment_score {
-    sql_on: ${item_region_sales.item} = ${sentiment_score.item} ;;
+    sql_on: ${item_region_sales.item} = ${sentiment_score.item}
+        AND ${item_region_sales.week_end_date} = ${sentiment_score.weekend_date} ;;
     relationship: many_to_one
   }
 }
