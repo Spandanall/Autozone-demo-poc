@@ -52,8 +52,8 @@ view: sentiment_score {
   }
   measure: avg_sentiment_magnitude {
     label: "AVG Sentiment Magnitude"
-    type: average
-    sql:  ${TABLE}.sentiment_magnitude;;
+    type: number
+    sql:  AVG(${sentiment_magnitude});;
   }
   measure: count {
     type: count
