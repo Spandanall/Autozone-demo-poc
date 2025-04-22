@@ -28,11 +28,11 @@ view: sentiment_score {
   }
   dimension: sentiment_magnitude {
     type: number
-    sql: ${TABLE}.sentiment_magnitude ;;
+    sql: CAST(${TABLE}.sentiment_magnitude AS FLOAT64) ;;
   }
   dimension: sentiment_score {
     type: number
-    sql: ${TABLE}.sentiment_score ;;
+    sql: CAST(${TABLE}.sentiment_score AS FLOAT64) ;;
   }
   dimension: sub_category {
     type: string
@@ -48,12 +48,12 @@ view: sentiment_score {
   measure: avg_sentiment_score {
     label: "AVG Sentiment Score"
     type: average
-    sql: CAST(${TABLE}.sentiment_score AS FLOAT64) ;;
+    sql: ${TABLE}.sentiment_score ;;
   }
   measure: avg_sentiment_magnitude {
     label: "AVG Sentiment Magnitude"
     type: average
-    sql:  CAST(${TABLE}.sentiment_magnitude AS FLOAT64);;
+    sql:  ${TABLE}.sentiment_magnitude;;
   }
   measure: count {
     type: count
