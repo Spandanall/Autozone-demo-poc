@@ -45,16 +45,10 @@ view: sentiment_score {
     datatype: date
     sql: ${TABLE}.weekend_date ;;
   }
-  #
   measure: avg_sentiment_score {
     label: "AVG Sentiment Score"
-    type: number
-    sql: (
-          SELECT AVG(CAST(s.sentiment_score AS FLOAT64))
-          FROM `pandera-bi-demo.ccai.sentiment_score` s
-          WHERE s.item = ${item_region_sales.item}
-            AND s.weekend_date = ${item_region_sales.week_end_date}
-        ) ;;
+    type: average
+    sql: DISTINCT ${sentiment_score} ;;
   }
   measure: avg_sentiment_magnitude {
     label: "AVG Sentiment Magnitude"
