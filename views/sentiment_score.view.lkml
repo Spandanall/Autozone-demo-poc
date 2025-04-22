@@ -28,11 +28,11 @@ view: sentiment_score {
   }
   dimension: sentiment_magnitude {
     type: number
-    sql: ROUND(${TABLE}.sentiment_magnitude, 2) ;;
+    sql: ${TABLE}.sentiment_magnitude ;;
   }
   dimension: sentiment_score {
     type: number
-    sql: round(${TABLE}.sentiment_score,2) ;;
+    sql: ${TABLE}.sentiment_score ;;
   }
   dimension: sub_category {
     type: string
