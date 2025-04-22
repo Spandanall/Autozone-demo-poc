@@ -32,7 +32,7 @@ view: sentiment_score {
   }
   dimension: sentiment_score {
     type: number
-    sql: CAST(${TABLE}.sentiment_score AS FLOAT64) ;;
+    sql: ${TABLE}.sentiment_score ;;
   }
   dimension: sub_category {
     type: string
@@ -48,18 +48,12 @@ view: sentiment_score {
   measure: avg_sentiment_score {
     label: "AVG Sentiment Score"
     type: average
-    sql: (
-    SELECT AVG(CAST(sentiment_score AS FLOAT64))
-    FROM `pandera-bi-demo.ccai.sentiment_score`
-  ) ;;
+    sql: CAST(${TABLE}.sentiment_score AS FLOAT64) ;;
   }
   measure: avg_sentiment_magnitude {
     label: "AVG Sentiment Magnitude"
     type: average
-    sql: (
-    SELECT AVG(CAST(sentiment_magnitude AS FLOAT64))
-    FROM `pandera-bi-demo.ccai.sentiment_score`
-  ) ;;
+    sql:  CAST(${TABLE}.sentiment_magnitude AS FLOAT64);;
   }
   measure: count {
     type: count
