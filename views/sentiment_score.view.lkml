@@ -48,7 +48,10 @@ view: sentiment_score {
   measure: avg_sentiment_score {
     label: "AVG Sentiment Score"
     type: average
-    sql: CAST(${sentiment_score.sentiment_score} AS FLOAT64) ;;
+    sql: (
+    SELECT AVG(CAST(sentiment_score AS FLOAT64))
+    FROM `pandera-bi-demo.ccai.sentiment_score`
+  ) ;;
   }
   measure: avg_sentiment_magnitude {
     label: "AVG Sentiment Magnitude"
