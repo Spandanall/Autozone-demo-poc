@@ -45,16 +45,6 @@ view: sentiment_score {
     datatype: date
     sql: ${TABLE}.weekend_date ;;
   }
-  measure: sentiment_score_m {
-    label: "Sentiment Score"
-    type:  number
-    sql: ${sentiment_score} ;;
-  }
-  measure: sentiment_magnitude_m {
-    label: "Sentiment Magnitude"
-    type:  number
-    sql: ${sentiment_magnitude} ;;
-  }
   measure: avg_sentiment_score {
     label: "AVG Sentiment Score"
     type: number
