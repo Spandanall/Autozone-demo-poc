@@ -14,9 +14,8 @@ explore: item_region_sales {
     sql_on: ${item_region_sales.item} = ${test_new_attr.product_id} ;;
     relationship: many_to_one
   }
-  join: sentiment_derived {
-    type: left_outer  # Or inner, depending on your data requirements
-    sql_on: concat(${item_region_sales.item},${item_region_sales.week_end_date}) = concat(${sentiment_derived.item},${sentiment_derived.weekend_date}) ;;
+  join: sentiment_score {
+    sql_on: concat(${item_region_sales.item},${item_region_sales.week_end_date}) = concat(${sentiment_score.item},${sentiment_score.weekend_date}) ;;
     relationship: many_to_one
   }
 }
