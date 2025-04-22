@@ -32,7 +32,7 @@ view: sentiment_score {
   }
   dimension: sentiment_score {
     type: number
-    sql: CAST(${TABLE}.sentiment_score AS FLOAT64) ; ;;
+    sql: CAST(${TABLE}.sentiment_score AS FLOAT64) ;;
   }
   dimension: sub_category {
     type: string
